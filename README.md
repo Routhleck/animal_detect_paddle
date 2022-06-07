@@ -1,0 +1,2 @@
+# animal_detect_paddle
+ 基于paddlepaddle框架的十二种动物识别
