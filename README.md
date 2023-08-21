@@ -1,6 +1,7 @@
 # animal_detect_paddle
 [English](README.md) | [中文](README_CN.md)
- Animal recognition of twelve species based on the paddlepaddle framework.
+ 
+Animal recognition of twelve species based on the paddlepaddle framework.
 
 Project's aistudio link: https://aistudio.baidu.com/aistudio/projectdetail/4214486?contributionType=1
 
