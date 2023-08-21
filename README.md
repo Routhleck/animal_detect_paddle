@@ -1,32 +1,33 @@
 # animal_detect_paddle
- 基于paddlepaddle框架的十二种动物识别
+[English](README.md) | [中文](README_CN.md)
+ Animal recognition of twelve species based on the paddlepaddle framework.
 
-项目aistudio地址：https://aistudio.baidu.com/aistudio/projectdetail/4214486?contributionType=1
+Project's aistudio link: https://aistudio.baidu.com/aistudio/projectdetail/4214486?contributionType=1
 
-### 项目介绍：
+### Project Introduction:
 
-#### 项目思路
+#### Project Approach:
 
-（1）创建数据集标注文件
+(1) Create dataset annotation files
 
-对训练集、验证集、测试集三个数据集进行标注。
+Annotations are made for the training set, validation set, and test set.
 
-（2）数据预处理
+(2) Data preprocessing
 
-将原图随机裁切为224*224大小，训练集中的数据将有50%的概率水平翻转。
+Randomly crop the original images to a size of 224*224. There's a 50% chance of horizontal flipping for images in the training set.
 
-（3）数据加载
+(3) Data loading
 
-使用paddle.io.DataLoader将数据加载进paddlepaddle框架中，设置参数batch_size，shuffle，dropout。
+Use paddle.io.DataLoader to load data into the paddlepaddle framework, setting parameters like batch_size, shuffle, and dropout.
 
-（4）搭建神经网络
+(4) Neural network architecture
 
-搭建了两种经典CNN，VGG16与RepVGG
+Constructed two classic CNNs: VGG16 and RepVGG.
 
-（5）评估训练模型
+(5) Evaluate trained models
 
-对使用不同神经网络和不同优化器训练的模型进行评估，计算出accuracy、error rate、precision、recall四个值
+Evaluate models trained using different neural networks and optimizers, calculating values such as accuracy, error rate, precision, and recall.
 
-#### 最终结果
+#### Final Results:
 
-最终结果准确率为83.33%，由于使用VGG16网络和训练集较大、输出结果较多导致训练较慢，若需要进一步提升还需要大量时间来进行提升。从混淆矩阵中可以看出一些有意思的东西，老鼠和龙的识别成功率较低，可能训练集中的图像风格不一，同一类别中都有较大的差别。牛也有可能识别为羊，马有可能识别成牛，因为这三类动物相似度较高。识别成功率较高的是猪和鸡，可能因为形态和颜色与其他种类的动物具有较大的差别。
+The final accuracy rate is 83.33%. Due to the use of the VGG16 network and a larger training set, resulting in multiple outputs, training was slow. Further improvements would require more time. The confusion matrix reveals interesting insights: mice and dragons have a lower recognition success rate. This could be due to variations in image styles within their respective training sets. Cows might be recognized as sheep, and horses might be identified as cows, given the similarity between these animals. Pigs and chickens have a higher recognition success rate, possibly because their shapes and colors differ significantly from other species.
